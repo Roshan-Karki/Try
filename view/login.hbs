@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="20" />
+    <link rel="stylesheet" href="login.css">
+    
+    <title>Login Form</title>
+  </head>
+  <body>
+    <form id = "moveHome">
+    <div class="box">
+      <div class="container">
+        <div class="top-header">
+          <span>Have an account?</span>
+          <header>Login</header>
+        </div>
+
+        <div class="input-feild">
+          <input type="text" id="username"  class="input" placeholder="Username" required />
+        
+        </div>
+        
+        <div class="input-feild">
+          <input
+            type="password"
+            class="input"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          
+        </div>
+        <div class="input-feild">
+            <input type="Submit" class="sumbit" value="Login">
+
+        </div>
+        <div class="bottom">
+            <div class="left">
+                <input type="checkbox"  id="check">
+                <label for="check">Remember me</label>
+            </div>
+            <div class="right">
+               <label><a href="#">Forgot password?</a>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+  <script>
+   let loginForm = document.getElementById("moveHome");
+
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let username = document.getElementById("username");
+  let password = document.getElementById("password");
+
+  if (username.value == "memby" || password.value == "098") {
+    alert("This form has been successfully submitted!");
+    window.location.href = "/home";
+  } else {
+   
+    // perform operation with form input
+     alert("Invalid Password");
+   
+      username.value = "";
+    password.value = "";
+  }
+});
+  </script>
+  </body>
+</html>

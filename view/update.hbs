@@ -1,0 +1,80 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="syp.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="Id">
+      <form action="newSearch">
+
+        <div class="main">
+          <h1> Search to Update</h1>
+          <label for="phone">Customer Number</label>
+          <input type="number" name="phone" id="phone" />
+          <button class="btn">Search</button>
+
+          <div class="next">
+            <a href="/home">HOME</a>
+
+          </div>
+        </div>
+
+        {{#if message4}}
+          <h3>data not found</h3>
+        {{/if}}
+      </form>
+    </div>
+    {{#if message3}}
+      <div class="Id">
+        <form action="/updateCustomer">
+
+          <div class="main">
+            <h1>Update Record</h1>
+            {{#data}}
+              <label for="name">Customer Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                value="{{customerName}}"
+              />
+
+              <label for="phone">Customer Number</label>
+              <input
+                type="number"
+                name="phone"
+                id="phone"
+                value="{{customerNumber}}"
+              />
+              <label for="product">Name of products</label>
+              <input
+                type="text"
+                name="product"
+                id="product"
+                value="{{Products}}"
+              />
+              <label for="price">Total Price</label>
+              <input
+                type="number"
+                name="price"
+                id="price"
+                value="{{totalPrice}}"
+              />
+
+              <button class="btn">Update</button>
+            {{/data}}
+            <div class="next">
+              <a href="./">HOME</a>
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+
+    {{/if}}
+  </body>
+</html>

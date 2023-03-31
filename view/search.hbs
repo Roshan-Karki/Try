@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="syp.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="Id">
+      <form action="searchCustomer">
+
+        <div class="main">
+          <h1>Search Record</h1>
+          <label for="phone">Customer Number</label>
+          <input type="number" name="phone" id="phone" />
+          <button class="btn">Search</button>
+
+          <div class="next">
+            <a href="/home">HOME</a>
+
+          </div>
+          {{#if message1}}
+            <tbody>
+              {{#data}}
+                <tr>
+                  <td>{{customerName}}</td>
+                  <td>{{customerNumber}}</td>
+                  <td>{{Products}}</td>
+                  <td>{{totalPrice}}</td>
+                </tr>
+              {{/data}}
+            </tbody>
+
+          {{/if}}
+
+          {{#if message2}}
+            <h3>data not found</h3>
+          {{/if}}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
